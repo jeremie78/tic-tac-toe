@@ -2,12 +2,20 @@
 
 var BoxStyle = {'height' : '100px','width' : '100px'};
 
+
 var React = require('react');
 
 var Box = React.createClass({
   getInitialState : function() {
   return {value : this.props.initialValue};
   },
+componentWillMount: function(){
+this.Timer = setInterval(function(){
+this.setState({
+'value' : .state.value === 'X' ? 'O' :'X'
+})
+},300);
+},
 
   'render': function onRender () {
     return (
@@ -15,4 +23,4 @@ var Box = React.createClass({
   }
 });
 
-React.render(<Box  initialValue = {1} />, document.body);
+React.render(<Box  initialValue = {'X' }/>, document.body);
