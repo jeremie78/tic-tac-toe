@@ -1,5 +1,5 @@
 'use strict';
-
+var BoxStyle = {'height' : '100px','width' : '100px'};
 var React = require('react');
 
 var Box = React.createClass({
@@ -9,9 +9,10 @@ var Box = React.createClass({
    */
   'render': function onRender () {
     return (
-      <button>X</button>
+
+      <button style={BoxStyle}> {this.props.value} </button>
     );
   }
 });
 
-React.render(<Box/>, document.body);
+React.render(<Box value='Yop' />, document.body);
